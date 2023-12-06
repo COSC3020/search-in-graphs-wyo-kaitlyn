@@ -1,7 +1,4 @@
-let visitedNodes = [];
-let result = [];
-
-function depthFirstSearch(graph, startNode, targetNode) {
+function depthFirstSearch(graph, startNode, targetNode, visitedNodes = [], result =[]) {
     if(visitedNodes.includes(startNode) == false) {
         visitedNodes.push(startNode);
     }
@@ -11,12 +8,10 @@ function depthFirstSearch(graph, startNode, targetNode) {
         if (graph[startNode]) {
             for(node of graph[startNode]) {
                 if (visitedNodes.includes(node) == false) {
-                    result = depthFirstSearch(graph, node, targetNode);
+                    result = depthFirstSearch(graph, node, targetNode, visitedNodes, result);
                 }
             }
         }
     }
     return result;
 }
-
-console.log(depthFirstSearch([[1],[0,3],[0,1],[0,1,2,3]], 0, 2))
