@@ -22,6 +22,12 @@ code, but you can base yours on test code from other exercises.
 What is the worst-case big $\Theta$ complexity of your implementation? Add your
 answer, including your reasoning, to this markdown file.
 
+My implementation traverses non-visited nodes until it reaches the target node.  
+In the worst case, the target node does not exist, so it will have to travel to each node.
+Since it is an adjacency list, the code has to traverse each edge to get to other nodes.  It has to check
+each edge to see if it has already been visited.  That means the complexity will be $\Theta(|E| +|V|)$, since 
+it will have to visit every node and every edge.
+
 ## Bonus
 
 Implement and analyze breadth-first search.

@@ -19,3 +19,4 @@ function depthFirstSearch(graph, startNode, targetNode) {
     return result;
 }
 
+console.log(depthFirstSearch([[1],[0,3],[0,1],[0,1,2,3]], 0, 2))
